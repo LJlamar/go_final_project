@@ -22,7 +22,7 @@ func NewServer(logger *log.Logger) *Application {
 	api.Init(mux)
 
 	//Port:
-	port := os.Getenv("PORT")
+	port := os.Getenv("TODO_PORT")
 	if port == "" {
 		port = "7540"
 	}
