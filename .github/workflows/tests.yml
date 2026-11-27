@@ -26,6 +26,11 @@ jobs:
 
     - name: Run local server
       run: |
+        export TODO_PASSWORD=1
+        export JWT_SECRET=practicum
+        export TODO_PORT=8080
+        export TODO_DBFILE=/tmp/scheduler.db
+        export APP_ENV=production
         CGO_ENABLED=0 GOOS=linux go run main.go &
         sleep 100
         go test -run ^TestApp$ ./tests
